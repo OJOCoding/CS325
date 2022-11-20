@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Vinnie's Trattoria</title>
+    <style>
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background-color: #fbfaf1;
+        width: 100vw;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        height: 5vw;
+        position: relative;
+        top: 0;
+        background-color: #fbfaf1;
+        width: 100vw;
+        z-index: 99;
+      }
+
+      .logo {
+        aspect-ratio: 1 / 1;
+        height: 7vh;
+        align-self: center;
+      }
+
+      #header_tittle {
+        font-family: "Roboto", "sans-serif";
+        font-weight: 500;
+        font-size: 1.25vw;
+        line-height: 25px;
+        letter-spacing: 0.55em;
+        color: #383127;
+        text-decoration: none;
+        margin-left: 3vw;
+        align-self: center;
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+
+      .navigation a {
+        font-family: "Roboto", "sans-serif";
+        font-weight: 400;
+        font-size: 1vw;
+        line-height: 25px;
+        color: #383127;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+      }
+
+      .navigation {
+        display: flex;
+        justify-content: end;
+        align-self: center;
+        margin-right: 3vw;
+        flex-grow: 1;
+        flex-basis: 0;
+        gap: 1vw;
+      }
+
+      footer * {
+        font-family: "Roboto", "sans-serif";
+        font-weight: 400;
+        font-size: 0.9vw;
+        line-height: 25px;
+        color: #fbfaf1;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        margin-right: 1vw;
+        margin-right: 2.8vw;
+      }
+
+      footer a {
+        color: #383127;
+        font-weight: 600;
+      }
+
+      footer {
+        padding: 0;
+        display: flex;
+        justify-content: end;
+        margin-top: 2.25vh;
+        background-color: #a10412;
+        color: #fbfaf1;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      main {
+        height: 800px;
+      }
+
+      h1 {
+        font-family: "Roboto", "sans-serif";
+        text-align: center;
+        color: #383127;
+        font-size: 1.5vw;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-top: 4vw;
+      }
+
+      /* Google map*/
+      .mapouter {
+        position: relative;
+        text-align: right;
+        height: 40vw;
+        width: 35vw;
+        border-radius: 15px;
+      }
+
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 40vw;
+        width: 35vw;
+        border-radius: 15px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 5vw 10vw;
+        width: 80vw;
+        gap: 10vw;
+        z-index: 1;
+      }
+
+      .info {
+        background-color: #a10412;
+        border-radius: 15px;
+        color: #fbfaf1;
+        padding: 2.5vw 2.5vw;
+        width: 30vw;
+        height: 38vw;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      .socials img {
+        width: 1.5vw;
+        aspect-ratio: 1/1;
+        margin-right: 1vw;
+        filter: invert(100%);
+      }
+
+      textarea {
+        width: 100%;
+        height: 2.5vw;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        resize: none;
+        color: #383127;
+        overflow: hidden;
+      }
+
+      .info span {
+        font-size: 1.25vw;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-family: "Roboto", "sans-serif";
+      }
+
+      .info p {
+        font-size: 1vw;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        line-height: 1.5vw;
+        font-family: "Roboto", "sans-serif";
+      }
+
+      .info h2 {
+        font-size: 1.3vw;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: "Roboto", "sans-serif";
+      }
+
+      .info h3 {
+        font-size: 1.15vw;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-family: "Roboto", "sans-serif";
+      }
+
+      #emailad {
+        text-transform: lowercase;
+        letter-spacing: 0.3em;
+        margin-top: -0.5vw;
+        margin-bottom: 2vw;
+      }
+
+      .vl {
+        border-left: 4px solid #383127;
+        height: 35vw;
+        position: absolute;
+        left: 50vw;
+        z-index: 5;
+        margin-top: 2.5vw;
+      }
+
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fbfaf1;
+        min-width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 15px;
+      }
+
+      .dropdown-content a {
+        float: none;
+        color: #383127;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        border-radius: 15px;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #fbfaf1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .redirect{
+        font-size: 1vw;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-family: "Roboto", "sans-serif";
+        text-decoration: none;
+        color: #fbfaf1;
+      }
+      html {
+    scroll-behavior: smooth;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" id="header_tittle">Vinnie's trattoria</a>
+
+      <img class="logo" src="images\logo.png" alt="" />
+      <nav class="navigation">
+        <a href="home.html">HOME</a>
+        <div class="dropdown">
+          <a id="drop" href="about_us.html">ABOUT US</a>
+          <div class="dropdown-content">
+            <a href="hiring.php">JOIN US</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a id="drop" href="menu.html">MENU</a>
+          <div class="dropdown-content">
+            <a href="delivery.html">DELIVERY</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a id="drop" href="reviews.php">REVIEW</a>
+          <div class="dropdown-content">
+            <a href="add_review.php">ADD REVIEW</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a id="drop" href="blog_index.php">BLOG</a>
+          <div class="dropdown-content">
+            <a href="add.php">ADD BLOG</a>
+          </div>
+        </div>
+        <a href="gallery.html">GALLERY</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </header>
+    <main>
+      <h1>METHODS HOW TO REACH US</h1>
+      <section class="contact-grid">
+        <div class="info">
+          <p>
+            <span id="res-name">VINNIE’S Trattoria Plaza</span><br />
+            WillU CThis Detail 1, 99, THESSALONIKI <br />
+            +30 699 9999 999 <br />
+            MON - SAT FROM 11 AM - 11 PM
+          </p>
+          <hr />
+          <p>
+            <span id="res-name">VINNIE’S Trattoria Original</span><br />
+            IfY NiceI WrkedHard 1, 99, THESSALONIKI <br />
+            +30 699 9999 999 <br />
+            MON - SAT FROM 11 AM - 11 PM
+          </p>
+          <br />
+          <h2>Follow us @vinniestrattoria</h2>
+          <div class="socials">
+            <a href="https://www.facebook.com/"
+              ><img src="images/social_logos/facebooklogo.png" alt=""
+            /></a>
+            <a href="https://www.instagram.com/"
+              ><img src="images/social_logos/instagramlogo.png" alt=""
+            /></a>
+            <a href="https://www.twitter.com/"
+              ><img src="images/social_logos/twitterlogo.png" alt=""
+            /></a>
+          </div>
+          <br />
+          <h3>Email us for reservations</h3>
+          <p id="emailad">vinniestrattoria@mail.com</p>
+          <h2>Want to keep up with us?</h2>
+          <a class="redirect" href="blog_index.php#newsletter">Subscribe to our newsletter!</a>
+        </div>
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe
+              width="100%"
+              height="100%"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=%20Vasiliou%20Sevenidi%2017,%20Pilea%20555%2035&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe>
+            <a href="https://2piratebay.org"></a>
+            <br />
+            <a href="https://www.embedgooglemap.net"></a>
+          </div>
+        </div>
+        <div class="vl"></div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        © 2022 CS 325: FALL PROJECT SUBMISSION BY
+        <a href="credits.html">ONI LUCA</a>
+      </p>
+    </footer>
+  </body>
+</html>
