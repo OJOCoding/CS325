@@ -1,17 +1,17 @@
 <?php
-  require "DBMS/db.php";
+require "DBMS/db.php";
 
-  if(isset($_POST["submit"])){
-    $Title = mysqli_real_escape_string($conn,$_POST["Title"]);
-    $Author = mysqli_real_escape_string($conn,$_POST["Author"]);
-    $Content = mysqli_real_escape_string($conn,$_POST["Content"]);
-    $Image_URL = mysqli_real_escape_string($conn,$_POST["Image_URL"]);
+if (isset($_POST["submit"])) {
+    $Title = mysqli_real_escape_string($conn, $_POST["Title"]);
+    $Author = mysqli_real_escape_string($conn, $_POST["Author"]);
+    $Content = mysqli_real_escape_string($conn, $_POST["Content"]);
+    $Image_URL = mysqli_real_escape_string($conn, $_POST["Image_URL"]);
 
     $query = " INSERT INTO `blog` (`ID`, `Title`, `Author`, `Content`, `Date_Created`,`Image_URL`) VALUES (NULL, '$Title', '$Author', '$Content', current_timestamp(), '$Image_URL');";
 
-    header("Location: ".ROOT_URL."blog_index.php");
-    mysqli_query($conn,$query);
-  }
+    header("Location: " . ROOT_URL . "blog_index.php");
+    mysqli_query($conn, $query);
+}
 ?>
 
 <!DOCTYPE html>
@@ -260,7 +260,7 @@ input[type=submit] {
         <h1>Blog Your Way</h1>
     </div>
     <div class="container">
-  <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+  <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
     
   <div class="row">
       <div class="col-25">
